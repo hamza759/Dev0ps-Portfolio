@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hamza Jamil — DevOps Engineer</title>
+  <meta name="description"
+    content="Hamza Jamil — DevOps Engineer portfolio showcasing automation, cloud, and CI/CD projects." />
+  <meta name="theme-color" content="#eaf7fb" />
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;800&display=swap"
+    rel="stylesheet">
+  <!-- Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.0/devicon.min.css">
+
+  <style>
+    /* Original CSS from your code (unchanged) */
+    :root {
+      --bg: #f7fbfd;
+      --card: #ffffff;
+      --muted: #6b7b88;
+      --text: #0f1720;
+      --accent: #0ea5a0;
+      --accent-2: #2563eb;
+      --glass: rgba(14, 165, 160, 0.06);
+      --radius: 14px;
+      --maxw: 1200px;
+      --pad: 28px;
+      --shadow: 0 10px 40px rgba(16, 24, 40, 0.06);
+      --transition: .28s;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    /* wrapper */
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: var(--pad)
+    }
+
+    /* header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      position: sticky;
+      top: 18px;
+      z-index: 90;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 8px 28px rgba(37, 99, 235, 0.08);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    nav a {
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-weight: 600
+    }
+
+    nav a:hover {
+      color: var(--accent-2);
+      background: rgba(37, 99, 235, 0.04)
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 20px;
+      border: 0;
+      background: transparent;
+      color: var(--muted)
+    }
+
+    /* hero full-width image + intro */
+    .hero {
+      margin-top: 18px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 0;
+      background: var(--card);
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.03);
+      transition: transform 1s cubic-bezier(.2, .9, .2, 1)
+    }
+
+    .hero-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 18, 31, 0.06), rgba(255, 255, 255, 0.02));
+    }
+
+    .hero-left {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 250, 252, 0.98));
+    }
+
+    .kicker {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--glass);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px
+    }
+
+    h1 {
+      margin: 8px 0 6px;
+      font-family: Poppins, Inter;
+      font-size: 34px;
+      line-height: 1.02
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 60ch
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      margin-top: 6px
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: white;
+      border: 0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px)
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid rgba(15, 23, 32, 0.04)
+    }
+
+    /* hero sidebar (profile card) */
+    .hero-profile {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .meta .name {
+      font-weight: 800;
+      font-size: 18px
+    }
+
+    .meta .role {
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    /* sections */
+    section {
+      margin-top: 34px
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 20px
+    }
+
+    .accent-line {
+      height: 4px;
+      width: 64px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2))
+    }
+
+    /* skills / tools layout */
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 20px;
+      align-items: start
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px
+    }
+
+    .skill {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 32, 0.03);
+      transition: transform .32s ease, box-shadow .32s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-6px)
+    }
+
+    .skill h3 {
+      margin: 0 0 8px;
+      font-size: 16px
+    }
+
+    .pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .tools-panel {
+      padding: 14px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(247, 250, 252, 0.95));
+      box-shadow: var(--shadow)
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px
+    }
+
+    .tool {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 10px;
+      background: white;
+      border: 1px solid rgba(15, 23, 32, 0.03);
+      transition: transform .22s ease;
+    }
+
+    .tool i {
+      font-size: 28px
+    }
+
+    .tool:hover {
+      transform: translateY(-6px)
+    }
+
+    /* projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .proj {
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 32, 0.03);
+      transition: transform .32s ease;
+    }
+
+    .proj:hover {
+      transform: translateY(-8px)
+    }
+
+    .proj-thumb {
+      height: 160px;
+      overflow: hidden
+    }
+
+    .proj-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .proj-body {
+      padding: 14px
+    }
+
+    .proj-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap
+    }
+
+    .tag {
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      background: var(--glass);
+      color: var(--muted)
+    }
+
+    /* contact */
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 18px;
+      align-items: start
+    }
+
+    .contact-card {
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98));
+      box-shadow: var(--shadow)
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(15, 23, 32, 0.06);
+      background: transparent;
+      color: var(--text)
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical
+    }
+
+    /* footer */
+    footer {
+      margin-top: 34px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-bottom: 30px
+    }
+
+    .proj:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .about-animate span {
+      display: inline-block;
+      word-break: break-word;
+    }
+
+
+    /* responsive */
+    @media (max-width:1050px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+
+      .cols {
+        grid-template-columns: 1fr
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media (max-width:720px) {
+      .hamburger {
+        display: block
+      }
+
+      nav {
+        display: none
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        transition: none;
+        transform: none;
+        opacity: 1
+      }
+
+      .proj:hover {
+        transform: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header aria-label="Main header">
+      <div class="brand">
+        <div class="logo">HJ</div>
+        <div>
+          <div style="font-weight:800">Hamza Jamil</div>
+          <div style="font-size:13px; color:var(--muted)">DevOps Engineer</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="hamburger" onclick="toggleMenu()" aria-controls="mobile-menu" aria-expanded="false"
+        title="Menu">☰</button>
+    </header>
+
+    <!-- HERO -->
+    <main id="home" class="hero" role="main">
+      <div class="hero-media" aria-hidden="true">
+        <img src="d43ee7e1-1851-4f75-8af5-7fe26095618f.jpeg" alt="Data center servers">
+      </div>
+
+      <aside class="hero-profile">
+        <div style="display:flex; flex-direction:column; gap:12px; align-items:flex-start">
+          <span class="kicker">DevOps • CI/CD • IaC</span>
+          <h1><span id="typed"></span><span id="typed-cursor" style="color:var(--accent-2); margin-left:6px">▌</span>
+          </h1>
+          <p class="lead">I design reliable delivery pipelines, automate infrastructure as code, and optimize
+            containerized apps for production. I focus on repeatability, observability, and safe deployments.</p>
+
+          <div class="hero-cta">
+            <button class="btn" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">View
+              My Work</button>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; align-items:center; margin-top:12px; width:100%">
+          <div class="avatar">
+            <img src="d43ee7e1-1851-4f75-8af5-7fe26095618f.jpeg" alt="Profile headshot">
+          </div>
+          <div class="meta">
+            <div class="name">Hamza Jamil</div>
+            <div class="role">DevOps Engineer</div>
+            <div style="color:var(--muted); font-size:13px; margin-top:6px">Contact: <a
+                href="mailto:hamzajamilhj11@gmail.com">hamzajamilhj11@gmail.com</a></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+      <div class="section-head">
+        <div class="section-title">
+          <h2>About</h2>
+          <div class="accent-line" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:20px; margin-top:16px; align-items:flex-start; flex-wrap:wrap">
+        <div style="flex:1; min-width:300px; color:var(--muted); font-size:15px; line-height:1.7">
+          <p class="about-animate">
+            Pragmatic DevOps Engineer designing CI/CD pipelines, provisioning AWS infrastructure with Terraform, and
+            packaging applications in Docker & Kubernetes. Skilled in Jenkins, Prometheus, Grafana, and Linux
+            administration. Focused on automation, reliability, and observability.
+          </p>
+
+        </div>
+
+        <div style="width:320px;">
+          <div style="border-radius:12px; overflow:hidden; box-shadow:var(--shadow)">
+            <img src="1720159779644.png" alt="Team collaboration">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & TOOLS -->
+    <section id="skills" class="reveal">
+      <div class="section-head">
+        <div class="section-title">
+          <h2>Skills & Tools</h2>
+          <div class="accent-line" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="cols" style="margin-top:16px">
+        <div>
+          <div class="skills-grid">
+            <div class="skill">
+              <h3>CI/CD & Automation</h3>
+              <div style="color:var(--muted)">Build and maintain pipelines, automations and release processes.</div>
+              <div class="pills" style="margin-top:10px">
+                <span class="tag">Jenkins</span><span class="tag">GitLab</span><span class="tag">Argo CD</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Infrastructure as Code</h3>
+              <div style="color:var(--muted)">Provision and manage AWS infrastructure with Terraform.</div>
+              <div class="pills" style="margin-top:10px">
+                <span class="tag">Terraform</span><span class="tag">Terragrunt</span><span
+                  class="tag">CloudFormation</span>
+              </div>
+            </div>
+
+            <div class="skill">
+              <h3>Containers & Orchestration</h3>
+              <div style="color:var(--muted)">Docker, Kubernetes, Helm, and containerized deployments.</div>
+              <div class="pills" style="margin-top:10px">
+                <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Helm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="tools-panel">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px">
+            <strong>Primary Tools</strong>
+            <div style="color:var(--muted); font-size:13px">Hover for micro animation</div>
+          </div>
+
+          <div class="tools-grid">
+            <div class="tool"><i class="devicon-aws-plain colored"></i>
+              <div>AWS</div>
+            </div>
+            <div class="tool"><i class="devicon-terraform-plain colored"></i>
+              <div>Terraform</div>
+            </div>
+            <div class="tool"><i class="devicon-jenkins-plain colored"></i>
+              <div>Jenkins</div>
+            </div>
+            <div class="tool"><i class="devicon-docker-plain colored"></i>
+              <div>Docker</div>
+            </div>
+            <div class="tool"><i class="devicon-kubernetes-plain colored"></i>
+              <div>K8s</div>
+            </div>
+            <div class="tool"><i class="devicon-prometheus-original colored"></i>
+              <div>Prometheus</div>
+            </div>
+            <div class="tool"><i class="devicon-grafana-plain colored"></i>
+              <div>Grafana</div>
+            </div>
+            <div class="tool"><i class="devicon-linux-plain colored"></i>
+              <div>Linux</div>
+            </div>
+            <div class="tool"><i class="devicon-git-plain colored"></i>
+              <div>Git</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <div class="section-head">
+        <div class="section-title">
+          <h2>Selected Projects</h2>
+          <div class="accent-line" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px" class="projects-grid">
+        <article class="proj">
+          <div class="proj-thumb">
+            <img src="Screenshot from 2025-11-01 22-27-14.png" alt="Terraform project">
+          </div>
+          <div class="proj-body">
+            <h3>E-commerce Platform</h3>
+            <div style="color:var(--muted); font-size:14px; margin-top:6px">
+              Developed and deployed a full-stack E-Commerce app with automated CI/CD pipelines using Jenkins, Docker,
+              and Terraform. Provisioned scalable AWS infrastructure (EC2, EKS, VPC), configured Kubernetes manifests
+              for services and database, and set up Prometheus/Grafana for monitoring, ensuring secure, reliable, and
+              repeatable deployments
+            </div>
+            <div class="proj-tags">
+              <span class="tag">Terraform</span><span class="tag">AWS</span><span class="tag">Kubernetes</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-thumb">
+            <img src="Screenshot from 2025-11-06 00-13-31.png" alt="Local CI project">
+          </div>
+          <div class="proj-body">
+            <h3>Banking Application</h3>
+            <div style="color:var(--muted); font-size:14px; margin-top:6px">
+              Developed and deployed a Spring Boot banking application using Docker and Kubernetes with automated CI/CD
+              pipelines. Built multi-stage Docker images, created Kubernetes manifests for deployments and StatefulSets
+              with autoscaling, and configured Jenkins pipelines for building, testing, and GitOps-style manifest
+              updates, ensuring scalable, reliable, and reproducible deployments
+            </div>
+            <div class="proj-tags">
+              <span class="tag">Docker</span><span class="tag">Jenkins</span><span class="tag">Kubernetes</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-thumb">
+            <img src="1758906241956.jpeg" alt="Monitoring project">
+          </div>
+          <div class="proj-body">
+            <h3>Chat Application</h3>
+            <div style="color:var(--muted); font-size:14px; margin-top:6px">
+              Built a three-tier chat application (React, Spring Boot, MySQL) with automated CI/CD using Jenkins,
+              Docker, and Docker Compose. Integrated GitHub for continuous testing and deployment, applied shell
+              scripting and Trivy vulnerability scanning, reducing manual deployment effort by 80% and improving
+              delivery speed and reliability
+            </div>
+            <div class="proj-tags">
+              <span class="tag">CI/CD</span><span class="tag">Docker/DockerCompose</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <div class="section-head">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <div class="accent-line" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="contact-panel" style="margin-top:16px">
+        <form class="contact-card" onsubmit="event.preventDefault(); submitContactForm();">
+          <label class="muted" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required>
+          <label class="muted" for="email" style="margin-top:8px">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          <label class="muted" for="message" style="margin-top:8px">Message</label>
+          <textarea id="message" name="message" placeholder="How can I help?" required></textarea>
+          <div style="display:flex; gap:10px; margin-top:12px">
+            <button class="btn" type="submit" disabled>Send Message</button>
+          </div>
+        </form>
+
+        <aside class="contact-card" style="display:flex; flex-direction:column; gap:12px;">
+          <div style="font-weight:800">Get in touch</div>
+          <div style="color:var(--muted)"><strong>Email:</strong> <a
+              href="mailto:hamzajamilhj11@gmail.com">hamzajamilhj11@gmail.com</a></div>
+          <div style="color:var(--muted)"><strong>GitHub:</strong> <a
+              href="https://github.com/hamza759">github.com/hamza759</a></div>
+          <div style="color:var(--muted)"><strong>LinkedIn:</strong> <a
+              href="https://www.linkedin.com/in/hamza-jamil-a34651258">linkedin.com/in/hamza-jamil-a34651258</a></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> • DevOps Portfolio — Hamza Jamil
+    </footer>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" aria-hidden="true"
+    style="display:none; position:fixed; inset:80px 16px auto 16px; z-index:80; border-radius:12px; padding:12px; background:white; box-shadow:var(--shadow)">
+    <a href="#home" onclick="toggleMenu()">Home</a><br>
+    <a href="#about" onclick="toggleMenu()">About</a><br>
+    <a href="#skills" onclick="toggleMenu()">Skills</a><br>
+    <a href="#projects" onclick="toggleMenu()">Projects</a><br>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Typing effect (hero)
+    (function typingEffect() {
+      const phrases = [
+        "Hi — I'm Hamza Jamil",
+        "DevOps Engineer — CI/CD • IaC • Containers",
+        "I automate, observe, and scale production systems."
+      ];
+      const el = document.getElementById('typed');
+      const cursor = document.getElementById('typed-cursor');
+      let p = 0, i = 0, forward = true;
+      function type() {
+        const current = phrases[p];
+        if (forward) {
+          el.textContent = current.slice(0, i + 1);
+          i++;
+          if (i === current.length) { forward = false; setTimeout(type, 900); return; }
+        } else {
+          el.textContent = current.slice(0, i - 1);
+          i--;
+          if (i === 0) { forward = true; p = (p + 1) % phrases.length; }
+        }
+        setTimeout(type, forward ? 36 : 18);
+      }
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) type();
+      else { el.textContent = phrases[0]; cursor.style.display = 'none'; }
+    })();
+
+
+
+    // hero image subtle zoom on load/hover
+    document.querySelectorAll('.hero-media img').forEach(img => {
+      img.addEventListener('load', () => img.style.transform = 'scale(1.0)');
+      img.parentElement.addEventListener('mouseenter', () => img.style.transform = 'scale(1.06)');
+      img.parentElement.addEventListener('mouseleave', () => img.style.transform = 'scale(1.0)');
+    });
+
+    // demo resume download
+    function downloadResume() {
+      const content = `Resume — Hamza Jamil\n\nDownload your CV PDF here.`;
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Hamza_Jamil_Resume.txt';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    // demo contact submit
+    function submitContactForm() {
+      alert('Demo: message sent (replace this with a real backend).');
+      document.getElementById('name').value = ''; document.getElementById('email').value = ''; document.getElementById('message').value = '';
+    }
+
+    // mobile menu toggle
+    function toggleMenu() {
+      const mobile = document.getElementById('mobile-menu');
+      const btn = document.querySelector('.hamburger');
+      if (mobile.style.display === 'block') { mobile.style.display = 'none'; mobile.setAttribute('aria-hidden', 'true'); btn.setAttribute('aria-expanded', 'false'); }
+      else { mobile.style.display = 'block'; mobile.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true'); }
+    }
+
+    // close mobile menu on outside click
+    document.addEventListener('click', (ev) => {
+      const mobile = document.getElementById('mobile-menu'); const btn = document.querySelector('.hamburger');
+      if (!mobile || mobile.style.display !== 'block') return;
+      if (!mobile.contains(ev.target) && !btn.contains(ev.target)) { mobile.style.display = 'none'; mobile.setAttribute('aria-hidden', 'true'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+
+    // smooth internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+  <!-- smooth internal links -->
+  <script>
+    // Smooth internal link scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // --- HERO ---
+  gsap.from(".hero-profile", { opacity: 0, y: 60, duration: 1.2, ease: "power3.out" });
+  gsap.from(".hero-media img", { opacity: 0, scale: 1.15, duration: 1.5, ease: "power2.out" });
+
+  // Floating skill tag animation
+  gsap.from(".hero .kicker", {
+    opacity: 0,
+    y: -10,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+
+  gsap.to(".hero-media img", {
+    yPercent: 10,
+    ease: "none",
+    scrollTrigger: { trigger: ".hero", start: "top top", scrub: 0.8 }
+  });
+
+  // --- ALL SECTIONS ---
+  gsap.utils.toArray("section").forEach((section, i) => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 60,
+      x: i % 2 === 0 ? -40 : 40,
+      duration: 1.2,
+      ease: "back.out(1.7)",
+      scrollTrigger: { trigger: section, start: "top 85%", toggleActions: "play none none reverse" }
+    });
+  });
+
+  // --- SKILLS / TOOLS / PROJECTS ---
+  gsap.utils.toArray(".skill, .tool, .proj").forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 50,
+      scale: 0.9,
+      rotationY: i % 2 === 0 ? -10 : 10,
+      duration: 1,
+      ease: "back.out(1.7)",
+      scrollTrigger: { trigger: card, start: "top 90%" },
+      onComplete: () => {
+        gsap.to(card, {
+          boxShadow: "0 0 25px rgba(14,165,160,0.25)",
+          duration: 0.3,
+          yoyo: true,
+          repeat: 1,
+          ease: "sine.inOut"
+        });
+      }
+    });
+  });
+
+  // --- CONTACT CARDS ---
+  gsap.utils.toArray(".contact-card").forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0,
+      y: 40,
+      scale: 0.95,
+      duration: 1,
+      delay: i * 0.2,
+      ease: "power3.out",
+      scrollTrigger: { trigger: card, start: "top 90%" }
+    });
+  });
+
+  // --- MOBILE SPECIFIC ANIMATIONS ---
+  if (window.innerWidth <= 720) {
+    gsap.utils.toArray(".tool").forEach((tool, i) => {
+      gsap.from(tool, {
+        opacity: 0,
+        y: 30,
+        scale: 0.85,
+        duration: 0.8,
+        delay: i * 0.25,
+        ease: "back.out(1.7)",
+        scrollTrigger: { trigger: tool, start: "top 95%" }
+      });
+    });
+    gsap.utils.toArray(".proj").forEach((proj, i) => {
+      gsap.from(proj, {
+        opacity: 0,
+        y: 40,
+        scale: 0.9,
+        duration: 0.9,
+        delay: i * 0.3,
+        ease: "back.out(1.7)",
+        scrollTrigger: { trigger: proj, start: "top 95%" }
+      });
+    });
+  }
+
+  // --- ABOUT TEXT ANIMATION ---
+  const para = document.querySelector(".about-animate");
+  if (para) {
+    const words = para.textContent.split(" ");
+    para.textContent = "";
+
+    words.forEach((word, i) => {
+      const span = document.createElement("span");
+      span.textContent = word + " ";
+      span.style.opacity = 0;
+      span.style.display = "inline-block";
+      span.style.transform = "translateY(10px)";
+      para.appendChild(span);
+
+      gsap.to(span, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        color: "#111",
+        fontWeight: 600,
+        duration: 0.6,
+        delay: i * 0.15,
+        ease: "power2.out",
+        scrollTrigger: { trigger: para, start: "top 90%" }
+      });
+    });
+  }
+
+}); // <-- Make sure DOMContentLoaded ends here
+</script>
+
+
+
+
+</body>
+
+</html>
