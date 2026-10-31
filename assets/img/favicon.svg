@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hamza Jamil monogram">
+  <rect width="64" height="64" rx="13" fill="#070907"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="11.5" fill="none" stroke="#c8f751" stroke-opacity=".38" stroke-width="2"/>
+  <path d="M19 21.5 30 32 19 42.5" fill="none" stroke="#c8f751" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <rect x="34" y="44" width="13" height="5.5" rx="1" fill="#c8f751"/>
+</svg>
